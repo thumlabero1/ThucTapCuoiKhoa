@@ -19,6 +19,7 @@ Route::middleware(['auth'])-> group(function () //xác nhận administration, kh
         // menu
         Route::prefix('menus')->group(function (){
             Route::get('add', [MenuController::class,'create']);
+            Route::post('add', [MenuController::class,'store']);
         });
         });
 

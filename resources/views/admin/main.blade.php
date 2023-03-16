@@ -3,10 +3,10 @@
 <head>
   @include('admin.head')
 </head>
-<body>
+<body class="bg-dark">
   <div class="container-fluid">
     <div class="row d-md-flex">
-      <div class="col-md-3 bg-light">
+      <div class="col-md-3 bg-dark">
         @include('admin.sidebar')
       </div>
       <div class="col-md-9">

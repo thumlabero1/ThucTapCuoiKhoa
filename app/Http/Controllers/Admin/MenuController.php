@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Console\View\Components\Alert;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Termwind\Components\Dd;
 
 class MenuController extends Controller
 {
@@ -14,4 +16,9 @@ class MenuController extends Controller
       'title' => 'Thêm danh mục mới',
     ]);
  }
+ public function store(Request $request)
+ {
+   dd($request);
+ }
+
 }

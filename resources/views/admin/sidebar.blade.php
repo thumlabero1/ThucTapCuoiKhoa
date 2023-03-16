@@ -1,17 +1,28 @@
-<div class="sidebar p-3">
-    <h2>Admin Dashboard</h2>
-    <ul class="nav flex-column">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Dashboard</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fas fa-user me-2"></i>Users</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fas fa-cubes me-2"></i>Products</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/admin/menus/add"><i class="fas fa-boxes me-2"></i>Add Products</a>
-      </li>
-    </ul>
-  </div>
+<div class="sidebar p-3 bg-dark">
+  <a class="nav-link text-white" href="/admin/main">
+    <h2 class="text-white">Admin Dashboard</h2>
+  </a>
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link text-white" href="#"><i class="fas fa-user me-2"></i>Người dùng</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-white" href="#"><i class="fas fa-cubes me-2"></i>Danh mục</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-white" href="/admin/menus/add"><i class="fas fa-boxes me-2"></i>Thêm danh mục</a>
+    </li>
+    <li>
+      <br>
+    </li>
+    <li>
+      <br>
+    </li>
+    <li>
+      <br>
+    </li>
+    <li>
+      <br>
+    </li>
+  </ul>
+</div>
