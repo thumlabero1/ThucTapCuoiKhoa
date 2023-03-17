@@ -5,6 +5,7 @@
 </head>
 <body class="bg-dark">
   <div class="container-fluid">
+    @include('admin.alert')
     <div class="row d-md-flex">
       <div class="col-md-3 bg-dark">
         @include('admin.sidebar')
