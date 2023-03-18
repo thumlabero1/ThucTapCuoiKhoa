@@ -8,7 +8,7 @@
   <form action="" method="POST">
     <div class="form-group mb-3">
       <label for="menu" class="form-label text-white font-weight-bold">Tên danh mục</label>
-      <input type="text" class="form-control" name ="menu" id="menu" placeholder="Nhập tên danh mục">
+      <input type="text" class="form-control" name ="name" id="name" placeholder="Nhập tên danh mục">
     </div>
 
     <div class="mb-3">
