@@ -18,7 +18,6 @@ class MenuService {
                 'description' => (string) $request->input('description'),
                 'content' => (string) $request->input('content'),
                 'active' => (string) $request->input('active'),
-                'slug' => Str::slug($request->input('name'), '-')
             ]);
             Session::flash('success', 'Thêm mới dữ liệu thành công!');
         } catch (\Exception $err) {
@@ -27,5 +26,10 @@ class MenuService {
             return false;
         }
         return true;
+    }
+    public function getParent()
+    {
+        # code...
+        return Menu::where('parent_id', 0)->get();
     }
 }

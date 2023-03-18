@@ -25,6 +25,7 @@ class MenuController extends Controller
 
     return view('admin.menus.add',[
       'title' => 'Thêm danh mục mới',
+      'menus'=>$this->menuService->getParent()
     ]);
  }
  public function store(CreateFormRequest $request)
