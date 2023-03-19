@@ -22,7 +22,7 @@ class MenuController extends Controller
       $this->menuService = $menuService;
     }
  public function create(){
-
+// thêm danh mục, trả về rout add
     return view('admin.menus.add',[
       'title' => 'Thêm danh mục mới',
       'menus'=>$this->menuService->getParent()
@@ -30,8 +30,9 @@ class MenuController extends Controller
  }
  public function store(CreateFormRequest $request)
  {
+  //gọi hàm tạo trong menuservice với tham số là request
    $result = $this->menuService->create($request);
-
+  //trả về đường dẫn hiện hành
    return redirect()->back();
  }
 

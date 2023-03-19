@@ -14,7 +14,7 @@ class Menu extends Model
      * Summary of filltable
      * @var array
      */
-    protected $fillable = [
+    protected $fillable = [ //phương thức protected là bắt buộc để trường name hợp lệ
         'name',
         'parent_id',
         'description',

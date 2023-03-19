@@ -19,14 +19,13 @@ class LoginController extends Controller
     }
     public function store( Request $request)
     {
-        
-
+        // sử dụng hàm validate của laravel để xử lí rnagf buộc dữ liệu
         $this->validate($request, [
-            'email'=> 'required|email:filter',
-            'password'=> 'required'
+            'email'=> 'required|email:filter', //email là duy nhất
+            'password'=> 'required'//mật khẩu là duy nhất
         ]);
 
-        if(Auth::attempt([
+        if(Auth::attempt([ //xác thực người dùng trong laravel
             'email' => $request->input(key: 'email'),
             'password' => $request->input(key: 'password'),
             
