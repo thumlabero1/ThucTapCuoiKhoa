@@ -17,9 +17,6 @@
         @foreach($menus as $menu)
         <option value="{{$menu->id}}">{{$menu->name}}</option>
         @endforeach
-        <option value="0">
-          Danh mục cha
-        </option>
       </select>
     </div>
 

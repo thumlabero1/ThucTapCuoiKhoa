@@ -13,7 +13,7 @@
       <a class="nav-link text-white" href="/admin/menus/add"><i class="fas fa-boxes me-2"></i>Thêm danh mục</a>
     </li>
     <li>
-      <br>
+    <a class="nav-link text-white" href="/admin/menus/list"><i class="fas fa-boxes me-2"></i>danh sách danh mục</a>
     </li>
     <li>
       <br>

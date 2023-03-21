@@ -29,7 +29,10 @@ class MenuService {
     }
     public function getParent()
     {
-        # code...
-        return Menu::where('parent_id', 0)->get();
+       return Menu::where('parent_id',0)->get();
+    }
+    public function GetAll()
+    {
+        return Menu::orderbyDesc('id')->paginate(20);
     }
 }

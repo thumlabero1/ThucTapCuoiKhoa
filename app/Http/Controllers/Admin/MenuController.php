@@ -22,7 +22,7 @@ class MenuController extends Controller
       $this->menuService = $menuService;
     }
  public function create(){
-// thêm danh mục, trả về rout add
+// thêm danh mục, trả về route add
     return view('admin.menus.add',[
       'title' => 'Thêm danh mục mới',
       'menus'=>$this->menuService->getParent()
@@ -35,5 +35,13 @@ class MenuController extends Controller
   //trả về đường dẫn hiện hành
    return redirect()->back();
  }
+ public function index()
+ {
+  # code...
+  return view('admin.menus.list', [
+    'title' =>'danh sách danh mục mới nhất',
+     'menus' => $this->menuService->getParent()
+  ]);
 
+ }
 }
