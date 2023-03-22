@@ -13,7 +13,7 @@
     </tr>
   </thead>
   <tbody>
-  {{!! \app\Helpers\Helper::menus($menus) !!}}
+  {{!! \app\Helpers\Helper::menu($menus) !!}}
   </tbody>
 </table>
 
