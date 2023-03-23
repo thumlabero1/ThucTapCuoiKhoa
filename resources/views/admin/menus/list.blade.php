@@ -13,7 +13,15 @@
     </tr>
   </thead>
   <tbody>
-  {{!! \app\Helpers\Helper::menu($menus) !!}}
+  <!-- {{!! \app\Helpers\Helper::menu($menus) !!}} -->
+  @foreach($menus as $menu)
+  <tr>
+        <td class ="text-white">{{$menu->id}}</td>
+        <td class ="text-white">{{$menu->name}}</td>
+        <td class ="text-white">{{$menu->active}}</td>
+        <td class ="text-white">{{$menu->updated_at}}</td>
+  </tr>       
+  @endforeach
   </tbody>
 </table>
 
