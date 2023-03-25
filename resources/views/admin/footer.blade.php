@@ -43,4 +43,5 @@
 <script src="../../../public/template/admin/dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="../../../public/template/admin/dist/js/pages/dashboard.js"></script>
+<!-- ajax script -->
 <script src="../../../public/template/admin/js/main.js"></script>

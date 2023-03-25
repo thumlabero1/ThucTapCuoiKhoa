@@ -43,5 +43,6 @@ class MenuService {
         if($menu) {
             return Menu::where('id', $id)->orWhere('parent_id',$id)->delete();
     }
-        return false;}
+        return false;
+    }
 }
