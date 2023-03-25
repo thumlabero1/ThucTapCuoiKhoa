@@ -14,12 +14,17 @@
   </thead>
   <tbody>
   <!-- {{!! \app\Helpers\Helper::menu($menus) !!}} -->
-  @foreach($menus as $menu)
+  @foreach($menus->sortBy('id') as $menu)
   <tr>
         <td class ="text-white">{{$menu->id}}</td>
         <td class ="text-white">{{$menu->name}}</td>
         <td class ="text-white">{{$menu->active}}</td>
         <td class ="text-white">{{$menu->updated_at}}</td>
+        <td class="btn btn-warning"><a href="/admin/menus/edit/{{$menu->id}}"><i class='fas fa-edit'></i></a></td>
+        <td class ="btn btn-danger"><a href="" onclick="removeRow({{$menu->id}},/admin/menus/destroy)"><i class='fa fa-trash' 
+        ></i></a></td>
+</td>
+
   </tr>       
   @endforeach
   </tbody>

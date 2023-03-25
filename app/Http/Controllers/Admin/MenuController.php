@@ -45,4 +45,18 @@ class MenuController extends Controller
   ]);
 
  }
+ public function destroy(Request $request) :JsonResponse
+ {
+
+  $result = $this->menuService->destroy($request);
+  if($result){
+      return respond()->json([
+        'error' =>false,
+        'message' => 'Xóa thành công danh mục'
+      ]);
+  }
+  return respond()->json([
+    'error' =>true
+  ]);
+ }
 }
