@@ -45,3 +45,5 @@
 <script src="../../../public/template/admin/dist/js/pages/dashboard.js"></script>
 <!-- ajax script -->
 <script src="../../../public/template/admin/js/main.js"></script>
+<!-- use jquery -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jQuery/2.1.3/jQuery.min.js"></script>

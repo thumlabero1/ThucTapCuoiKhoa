@@ -3,26 +3,29 @@ $.ajaxSetup({
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
 });
-function removeRow(
-    id,url
-    ){
-    if(confirm('xác nhận xóa')){
-        $ajax(
-            {
-                type: 'DELETE',
-                datatype: 'JSON',
-                data : {id},
-                url: url,
-                success: function(result){
-                    if($result.error == false){
-                        alert(result.message);
-                        location.reload();
-                    }
-                    else{
-                        alert('Xóa lỗi, vui lòng thử lại');
-                    }
-            }}
-        )
-    }
 
+$(document).ready(function() {
+    $('.delete-menu').click(function(e) {
+        e.preventDefault();
+        var menuId = $(this).data('id');
+        deleteMenu(menuId);
+    });
+});
+
+function deleteMenu(menuId) {
+    $.ajax({
+        url: '/admin/menus/delete/' + menuId,
+        type: 'DELETE',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        success: function(result) {
+            // Refresh the page to show updated data
+            location.reload();
+        },
+        error: function(xhr, status, error) {
+            console.log(xhr.responseText);
+        }
+    });
 }
+

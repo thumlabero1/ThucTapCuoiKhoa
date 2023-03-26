@@ -8,6 +8,7 @@ use Illuminate\Console\View\Components\Alert;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Termwind\Components\Dd;
+use App\Models\Menu;
 /**
  * Summary of MenuController
  */
@@ -45,18 +46,11 @@ class MenuController extends Controller
   ]);
 
  }
- public function destroy(Request $request) :JsonResponse
+ 
+ public function delete($id)
  {
-
-  $result = $this->menuService->destroy($request);
-  if($result){
-      return respond()->json([
-        'error' => false,
-        'message' => 'Xóa thành công danh mục'
-      ]);
-  }
-  return respond()->json([
-    'error' => true
-  ]);
+     $menu = Menu::findOrFail($id);
+     $menu->delete();
+     return back()->with('success', 'Menu deleted successfully');
  }
 }

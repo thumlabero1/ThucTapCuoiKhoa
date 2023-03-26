@@ -37,4 +37,5 @@ class Menu extends Model
 		$this->filltable = $filltable;
 		return $this;
 	}
+
 }

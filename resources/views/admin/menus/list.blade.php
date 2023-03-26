@@ -21,13 +21,16 @@
         <td class ="text-white">{{$menu->active}}</td>
         <td class ="text-white">{{$menu->updated_at}}</td>
         <td class="btn btn-warning"><a href="/admin/menus/edit/{{$menu->id}}"><i class='fas fa-edit'></i></a></td>
-        <td class ="btn btn-danger"><a href="" onclick="removeRow(
-          '{{ $menu->id }}','\/admin/menus/destroy\'
-          )"><i class='fa fa-trash' 
-        ></i></a></td>
-</td>
+        <td>
+            <form action="{{ route('menus.delete', $menu->id) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this menu?')"><i class="fa fa-trash"></i></button>
+            </form>
+        </td>
   </tr>       
   @endforeach
+  
   </tbody>
 </table>
 
