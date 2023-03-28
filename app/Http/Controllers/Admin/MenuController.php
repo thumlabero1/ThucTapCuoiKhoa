@@ -53,4 +53,31 @@ class MenuController extends Controller
      $menu->delete();
      return back()->with('success', 'Menu deleted successfully');
  }
+ public function edit($id)
+{
+  $menu = Menu::findOrFail($id);
+  return view('admin.menus.edit', [
+    'title' =>'danh sách danh mục mới nhất',
+     'menus' => $this->menuService->getid($id)
+  ]);
+}
+
+public function update(Request $request, $id)
+{
+    
+    $name = $request->input('name');
+    $description = $request->input('description');
+    $content = $request->input('content');
+    
+    $this->menuService->updateMenu($id, $name, $description, $content);
+    
+    return view('list',
+    [
+      'title' =>'danh sách danh mục mới nhất',
+       'menus' => $this->menuService->getAll()
+    ]
+  );
+
+
+}
 }
