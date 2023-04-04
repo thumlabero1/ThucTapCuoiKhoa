@@ -71,13 +71,17 @@ public function update(Request $request, $id)
     
     $this->menuService->updateMenu($id, $name, $description, $content);
     
-    return view('list',
+    return view('admin.menus.list',
     [
       'title' =>'danh sách danh mục mới nhất',
        'menus' => $this->menuService->getAll()
     ]
   );
-
-
+//   return redirect('menus.list',
+//   [
+//          'title' =>'danh sách danh mục mới nhất',
+//           'menus' => $this->menuService->getAll()
+//        ]
+// );
 }
 }

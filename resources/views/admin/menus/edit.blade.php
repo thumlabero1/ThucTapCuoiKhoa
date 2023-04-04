@@ -18,7 +18,8 @@
   </div>
   <br>
   <div class="mb-3 content" id=content>
-      <label for="menu" class="form-label text-white font-weight-bold">Mô tả chi tiết</label>
+      <label for="menu" class="form-lab
+      el text-white font-weight-bold">Mô tả chi tiết</label>
       <textarea name="content" class="form-control" id="content"></textarea>
     </div>
   

@@ -23,8 +23,9 @@ Route::middleware(['auth'])-> group(function () //xác nhận administration, kh
                 Route::get('list', [MenuController::class,'index']);
                 Route::delete('/delete/{id}', [MenuController::class,'delete'])->name('menus.delete');
                 Route::get('/edit/{id}', [MenuController::class,'edit'])->name('menus.edit');
-                Route::post('/update/{id}', [MenuController::class,'update'])->name('menus.update');
-
+                // Route::post('/update/{id}', [MenuController::class,'update'])->name('menus.update');
+                Route::post('/list/{id}', [MenuController::class,'update'])->name('menus.update');
+                Route::get('staff', [MenuController::class,'staff']);
             });
         });
 
