@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Admin\Users\LoginController;
 use App\Http\Controllers\Admin\MainController;
 use App\Http\Controllers\Admin\MenuController;
+use App\Http\Controllers\Admin\EmployeesController;
+use App\Http\Controllers\Admin\ProductsController;
 
 Route::get('admin/users/login', [LoginController::class, 'index'])->name(name : 'login');
 Route::post('/store', [LoginController::class, 'store']);
@@ -25,7 +27,13 @@ Route::middleware(['auth'])-> group(function () //xác nhận administration, kh
                 Route::get('/edit/{id}', [MenuController::class,'edit'])->name('menus.edit');
                 // Route::post('/update/{id}', [MenuController::class,'update'])->name('menus.update');
                 Route::post('/list/{id}', [MenuController::class,'update'])->name('menus.update');
-                Route::get('staff', [MenuController::class,'staff']);
+                
+            });
+            Route::prefix('Employees')->group(function (){
+                Route::get('list', [EmployeesController::class,'index']);
+            });
+            Route::prefix('Products')->group(function (){
+                Route::get('list', [ProductsController::class,'index']);
             });
         });
 

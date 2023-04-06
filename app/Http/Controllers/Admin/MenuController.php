@@ -9,13 +9,12 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Termwind\Components\Dd;
 use App\Models\Menu;
-/**
- * Summary of MenuController
- */
+
 class MenuController extends Controller
 {
     //
     protected $menuService;
+    protected $EmployeesService;
     
     public function __construct(MenuService $menuService)
     {
@@ -77,11 +76,8 @@ public function update(Request $request, $id)
        'menus' => $this->menuService->getAll()
     ]
   );
-//   return redirect('menus.list',
-//   [
-//          'title' =>'danh sách danh mục mới nhất',
-//           'menus' => $this->menuService->getAll()
-//        ]
-// );
 }
+
+
+
 }

@@ -13,7 +13,6 @@
     </tr>
   </thead>
   <tbody>
-  <!-- {{!! \app\Helpers\Helper::menu($menus) !!}} -->
   @foreach($menus->sortBy('id') as $menu)
   <tr>
         <td class ="text-white">{{$menu->id}}</td>
@@ -30,8 +29,6 @@
         </td>
   </tr>       
   @endforeach
-  
   </tbody>
 </table>
-
 @endsection

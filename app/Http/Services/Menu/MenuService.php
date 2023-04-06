@@ -58,4 +58,5 @@ class MenuService {
         $menu->content = $content;
         $menu->save();
     }
+    
 }
