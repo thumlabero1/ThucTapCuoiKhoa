@@ -1,0 +1,47 @@
+.cart-icon {
+    border-radius: 50%;
+    border: 1px solid transparent;
+    position: relative;
+    background: green; 
+  }
+
+  .cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 5px;
+    border-radius: 50%;
+  }
+
+.thanhnav{
+  background: rgb(55, 255, 0);  
+}
+
+.form-select{
+  opacity: 100%;
+}
+.gioithieu{
+  background: rgb(55, 255, 0);
+}
+.banggia{
+  background: rgb(55, 255, 0);
+}
+.dichvu{
+  background: rgb(55, 255, 0);
+}
+.cuahangcaycanh{
+  background: rgb(55, 255, 0);
+}
+.danhsach{
+background: rgb(36, 154, 3);
+}
+
+.danh-sach-hover li:hover {
+  background-color: #ccc; /* thay đổi màu nền khi hover */
+  color: black; /* thay đổi màu chữ khi hover */
+  cursor: pointer; /* thay đổi con trỏ chuột khi hover */
+}

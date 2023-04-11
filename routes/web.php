@@ -6,15 +6,16 @@ use App\Http\Controllers\Admin\MainController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\EmployeesController;
 use App\Http\Controllers\Admin\ProductsController;
+use App\Http\Controllers\homepage\HomepageController;
 
 Route::get('admin/users/login', [LoginController::class, 'index'])->name(name : 'login');
+Route::get('/homepage', [HomepageController::class, 'index']);
 Route::post('/store', [LoginController::class, 'store']);
 //qua trung gian middleware để đăng nhập
 Route::middleware(['auth'])-> group(function () //xác nhận administration, khi start session sẽ gom vào 1 group
     {
 
             Route::prefix('admin')->group(function (){ // sử dụng hàm prefix đưa tiền tố còn lại vào route
-            
             
             Route::get('/', [MainController::class, 'index'])->name(name : 'admin');
             Route::get('main', [MainController::class, 'index']);

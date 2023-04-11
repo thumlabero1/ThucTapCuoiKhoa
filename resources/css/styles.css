@@ -1,0 +1,11 @@
+.cart-icon {
+    border-radius: 50%;
+    border: 1px solid black;
+  }
+
+  .select {
+    appearance: none;
+    background-image: none;
+    /* other styles */
+  }
+  
