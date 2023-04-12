@@ -1,4 +1,4 @@
-<nav class="thanhnav navbar navbar-expand-lg navbar-light">
+<nav class="thanhnav navbar navbar-expand navbar-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><i class="fas fa-home text-white"></i></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,7 +42,9 @@
           <!-- form tìm kiếm -->
             <form class="d-flex mx-2">
                 <input class="form-control me-1" type="search" placeholder="Tìm kiếm" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Tìm kiếm</button>
+                <button class="btn btn-outline-success" type="submit">
+                <i class="fas fa-search text-white"></i>
+  </button>
             </form>
             <!-- kết thúc form tìm kiếm -->
           <li class="nav-item">

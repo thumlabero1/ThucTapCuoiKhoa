@@ -35,6 +35,8 @@ Route::middleware(['auth'])-> group(function () //xác nhận administration, kh
             });
             Route::prefix('Products')->group(function (){
                 Route::get('list', [ProductsController::class,'index']);
+                Route::get('add', [ProductsController::class,'add']);
+                
             });
         });
 

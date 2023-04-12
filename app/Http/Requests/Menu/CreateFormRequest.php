@@ -24,14 +24,14 @@ class CreateFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required'
+            'productName'=>'required'
         ];
     }
     public function messages() : array
     {
         # code...
         return [
-            'name.required'=>'Vui long nhap ten danh muc'
+            'productName.required'=>'Vui long nhap ten danh muc'
         ];
     }
 }

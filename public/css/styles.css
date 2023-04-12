@@ -18,7 +18,11 @@
   }
 
 .thanhnav{
-  background: rgb(55, 255, 0);  
+  background: rgb(55, 255, 0);
+  display: flex;
+  justify-content: center;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .form-select{
@@ -40,8 +44,27 @@
 background: rgb(36, 154, 3);
 }
 
-.danh-sach-hover li:hover {
-  background-color: #ccc; /* thay đổi màu nền khi hover */
+.danh-sach-hover a:hover {
+  background-color: darkorange; /* thay đổi màu nền khi hover */
   color: black; /* thay đổi màu chữ khi hover */
   cursor: pointer; /* thay đổi con trỏ chuột khi hover */
+}
+
+.gioithieu:hover {
+  background-color: #36ac41; /* Màu nền khi hover */
+  cursor: pointer; /* Đổi con trỏ chuột khi hover */
+}
+.banggia:hover {
+  background-color: #36ac41; /* Màu nền khi hover */
+  cursor: pointer; /* Đổi con trỏ chuột khi hover */
+}
+.dichvu:hover {
+  background-color: #36ac41; /* Màu nền khi hover */
+  cursor: pointer; /* Đổi con trỏ chuột khi hover */
+}
+
+
+.nav-item:hover select {
+  display: block;
+  z-index: 1;
 }

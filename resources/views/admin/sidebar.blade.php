@@ -9,12 +9,6 @@
     <li class="nav-item">
       <a class="nav-link text-white" href="/admin/Products/list"><i class="fas fa-cubes me-2"></i>Danh mục</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link text-white" href="/admin/menus/add"><i class="fas fa-boxes me-2"></i>Thêm danh mục</a>
-    </li>
-    <li>
-    <a class="nav-link text-white" href="/admin/menus/list"><i class="fas fa-boxes me-2"></i>danh sách danh mục</a>
-    </li>
     <li>
       <br>
     </li>

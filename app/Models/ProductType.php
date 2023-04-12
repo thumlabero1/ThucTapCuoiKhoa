@@ -5,18 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Products extends Model
+class ProductType extends Model
 {
     use HasFactory;
     protected $fillable = [ //phương thức protected là bắt buộc để trường name hợp lệ
-        'ProductName',
+        
         'ProductType',
-        'Description',
-        'Price',
-        'Inventory',
-		'Quantity',
-		'Manufacturer',
-		'image'
+        'ProductTypeName'
 	    ];
 
     
