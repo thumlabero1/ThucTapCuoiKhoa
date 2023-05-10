@@ -1,0 +1,70 @@
+@extends('admin.main')
+@section('head')
+    <script src="/ckeditor/ckeditor.js"></script>
+@endsection
+@section('content')
+    <form action="/admin/blogs/edit/{{ $blog->id }}" method="post">
+        <div class="card-body">
+            <div class="form-group">
+                <label for="name">Tên bài viết</label>
+                <input type="text" class="form-control" value="{{ $blog->name }}" id="name" name="name"
+                    placeholder="Enter name">
+            </div>
+            <div class="form-group">
+                <label for="menu_id">Danh mục</label>
+                <select name="category_blog_id" id="" class="form-control">
+                    <option value="">
+                        --- Chọn Danh mục ---
+                    </option>
+                    @foreach ($menus as $menu)
+                        <option {{ $menu->id == $blog->category_blog_id ? 'selected' : '' }} value={{ $menu->id }}>
+                            {{ $menu->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="description">Mô tả</label>
+                <textarea class="form-control" id="description" name="description" placeholder="Enter description">{{ $blog->description }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="Content">Nội dung</label>
+                <textarea class="form-control" id="content" name="content" placeholder="Enter Content">{{ $blog->description }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="thumb">Hình ảnh</label>
+                <input type="file" class="form-control" id="upload" placeholder="upload">
+                <div id="image_review">
+                    <a href="{{ $blog->thumb }}" target="_blank"><img src="{{ $blog->thumb }}" width="100px" /></a>
+                </div>
+                <input type="hidden" value="{{ $blog->thumb }}" name="thumb" id="file">
+            </div>
+            <div class="form-group">
+                <label for="active">Hiển thị</label>
+                <div class="custom-control custom-radio">
+                    <input class="custom-control-input" value="1" type="radio" id="customRadio1" name="active"
+                        {{ $blog->active == 1 ? 'checked' : '' }}>
+                    <label for="customRadio1" class="custom-control-label">Có</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input class="custom-control-input" value="0" type="radio" id="customRadio2" name="active"
+                        {{ $blog->active == 0 ? 'checked' : '' }}>
+                    <label for="customRadio2" class="custom-control-label">Không</label>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- /.card-body -->
+
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-danger">Reset</button>
+        </div>
+        @csrf
+    </form>
+@endsection
+@section('footer')
+    <script>
+        CKEDITOR.replace('content')
+    </script>
+@endsection

@@ -24,14 +24,21 @@ class CreateFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'productName'=>'required'
+            "name" => "required|max:255",
+            "description" => "required",
+            "content" => "required",
+            'thumb' => 'required',
+
         ];
     }
-    public function messages() : array
+    public function messages(): array
     {
-        # code...
         return [
-            'productName.required'=>'Vui long nhap ten danh muc'
+            'name.required' => "Vui lòng nhập tên danh mục",
+            'name.max:255' => "Tên danh mục không dài quá 255 ki tu",
+            'description.required' => "Vui lòng nhập mô tả",
+            'content.required' => "Vui lòng nhập nội dung",
+            'thumb.required' => "Vui lòng upload hình ảnh"
         ];
     }
 }

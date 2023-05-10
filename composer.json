@@ -4,16 +4,26 @@
     "description": "The Laravel Framework.",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
+    "post-install-cmd": ["ln -sr storage/app/public public/storage"],
     "require": {
         "php": "^8.0.2",
-        "guzzlehttp/guzzle": "^7.2",
-        "intervention/image": "^2.7",
+        "anhskohbo/no-captcha": "^3.4",
+        "barryvdh/laravel-dompdf": "^2.0",
+        "doctrine/dbal": "^3.4",
+        "guzzlehttp/guzzle": "^7.5",
+        "inertiajs/inertia-laravel": "^0.6.3",
         "laravel/framework": "^9.19",
+        "laravel/jetstream": "^2.12",
         "laravel/sanctum": "^3.0",
+        "laravel/socialite": "^5.5",
         "laravel/tinker": "^2.7",
-        "laravelcollective/html": "^6.4"
+        "livewire/livewire": "^2.5",
+        "maatwebsite/excel": "^3.1",
+        "psr/simple-cache": "1.0",
+        "tightenco/ziggy": "^1.0"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.7",
         "fakerphp/faker": "^1.9.1",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.0.1",
@@ -31,7 +41,6 @@
         "files": [
             "app/Helpers/Helper.php"
         ]
-        
     },
     "autoload-dev": {
         "psr-4": {
@@ -66,6 +75,6 @@
             "pestphp/pest-plugin": true
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true
 }

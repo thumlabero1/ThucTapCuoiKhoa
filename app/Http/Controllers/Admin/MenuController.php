@@ -2,82 +2,68 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\Menu\CreateFormRequest;
-use App\Http\Services\Menu\MenuService;
-use Illuminate\Console\View\Components\Alert;
-use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
-use Termwind\Components\Dd;
+use App\Http\Services\MenuService;
 use App\Models\Menu;
+use Illuminate\Http\Request;
 
 class MenuController extends Controller
 {
-    //
     protected $menuService;
-    protected $EmployeesService;
-    
     public function __construct(MenuService $menuService)
     {
-      
-      $this->menuService = $menuService;
+        $this->menuService = $menuService;
     }
- public function create(){
-// thêm danh mục, trả về route add
-    return view('admin.menus.add',[
-      'title' => 'Thêm danh mục mới',
-      'menus'=>$this->menuService->getParent()
-    ]);
- }
- public function store(CreateFormRequest $request)
- {
-  //gọi hàm tạo trong menuservice với tham số là request
-   $result = $this->menuService->create($request);
-  //trả về đường dẫn hiện hành
-   return redirect()->back();
- }
+    public function index()
+    {
+        return view('admin.menu.list', [
+            "title" => "Danh sách danh mục mới nhất",
+            "menus" => $this->menuService->getAll()
+        ]);
+    }
 
- public function index()
- {
-  # code...
-  return view('admin.menus.list', [
-    'title' =>'danh sách danh mục mới nhất',
-     'menus' => $this->menuService->getAll()
-  ]);
+    public function create()
+    {
+        return view('admin.menu.add', [
+            "title" => "Thêm danh mục mới",
+            "menus" => $this->menuService->getParent()
+        ]);
+    }
+    public function store(CreateFormRequest $request)
+    {
+        $result = $this->menuService->create($request);
+        return  redirect()->back();
+    }
 
- }
- 
- public function delete($id)
- {
-     $menu = Menu::findOrFail($id);
-     $menu->delete();
-     return back()->with('success', 'Menu deleted successfully');
- }
- public function edit($id)
-{
-  $menu = Menu::findOrFail($id);
-  return view('admin.menus.edit', [
-    'title' =>'danh sách danh mục mới nhất',
-     'menus' => $this->menuService->getid($id)
-  ]);
-}
+    public function show(Menu $menu)
+    {
+        return view('admin.menu.edit', [
+            "title" => "Chỉnh sửa danh mục: " . $menu->name,
+            "menus" => $this->menuService->getParent(),
+            "menu" => $menu
+        ]);
+    }
+    public function update(Menu $menu, CreateFormRequest $request)
+    {
+        $this->menuService->update($menu, $request);
 
-public function update(Request $request, $id)
-{
-    
-    $name = $request->input('name');
-    $description = $request->input('description');
-    $content = $request->input('content');
-    
-    $this->menuService->updateMenu($id, $name, $description, $content);
-    
-    return view('admin.menus.list',
-    [
-      'title' =>'danh sách danh mục mới nhất',
-       'menus' => $this->menuService->getAll()
-    ]
-  );
-}
+        return redirect('/admin/menus/list');
+    }
+    public function destroy(Request $request)
+    {
 
-
-
+        $result = $this->menuService->destroy($request);
+        if ($result) {
+            return response()->json([
+                'error' => false,
+                "message" => "Xóa thành công danh mục"
+            ]);
+        } else {
+            return response()->json([
+                'error' => true,
+                "message" => "Xóa danh mục thất bại"
+            ]);
+        }
+    }
 }
